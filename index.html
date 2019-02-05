@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title>AngularJS - Tableless</title>
+        <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+        <script src="app.js"></script>
+    </head>
+    <body>
+        <div ng-app="myApp">
+            <div ng-controller="retanguloController">
+                <h1>Quadrado</h1>
+                <h3>Area: {{area}}</h3>
+                <label>Lado 1:</label>
+                <input type="text" ng-model="lado1">
+                <label>Lado 2:</label>
+                <input type="text" ng-model="lado2">
+                
+            </div>
+            <div ng-controller="trianguloController">
+                <h1>Triangulo</h1>
+                <h3>Area: {{area}}</h3>
+                <label>Altura:</label>
+                <input type="text" ng-model="altura">
+                <label>Largura:</label>
+                <input type="text" ng-model="largura">
+                
+            </div>
+            <div ng-controller="circuloController">
+                <h1>Circulo</h1>
+                <h3>Area: {{area}}</h3>
+                <label>Raio:</label>
+                <input type="text" ng-model="raio">
+            </div>
+            <div ng-controller="casaController">
+                <h1>Casa</h1>
+                <img ng-src="imagem2.jpeg">
+                <h3>Area: {{area}}</h3>
+                <label>Lado 1:</label>
+                <input type="text" ng-model="lado1">
+                <label>Lado 2:</label>
+                <input type="text" ng-model="lado2">
+                <label>Altura:</label>
+                <input type="text" ng-model="altura">
+            </div>
+            <div ng-controller="figuraCompostaController">
+                <h1>Figura Composta</h1>
+                <img ng-src="imagem1.jpeg">
+                <h3>Area: {{area}}</h3>
+                <label>Lado 1:</label>
+                <input type="text" ng-model="lado1">
+                <label>Lado 2:</label>
+                <input type="text" ng-model="lado2">
+                <label>Raio:</label>
+                <input type="text" ng-model="raio">
+            </div>
+         </div>
+
+        
+    </body>
+</html> 
