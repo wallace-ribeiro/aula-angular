@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>AngularJS - Tableless</title>
+        <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+        <script src="app.js"></script>
+    </head>
+    <body>
+        <div ng-app="myApp">
+            <div ng-controller="UserCtrl">
+                <h3>Usuarios (os 3 primeiros):</h3>
+                <div ng-repeat="user in users | limitTo: 3 : 0">
+                    <p class="username">Bem vindo, {{user.details.username | uppercase}}</p>
+                    <p class="id">ID usuário: {{ user.details.id }}</p>
+                    <p> {{ user }} </p>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+ 

@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>AngularJS - Tableless</title>
+        <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+        <script src="app.js"></script>
+    </head>
+    <body>
+        <div ng-app="myApp">
+            <div ng-controller="UserCtrl">
+                <h3>Nomes que iniciam com M:</h3>
+                <div ng-repeat="user in users | filter:{details:{username:'M'}}">
+                    <p class="username">Bem vindo, {{user.details.username | uppercase}}</p>
+                    <p class="id">ID usuário: {{ user.details.id }}</p>
+                    <p> {{ user }} </p>
+                    <hr>
+                </div>
+                <h3>Nomes que não iniciam com M:</h3>
+                <div ng-repeat="user in users | filter:{details:{username:'!M'}}">
+                    <p class="username">Bem vindo, {{user.details.username | uppercase}}</p>
+                    <p class="id">ID usuário: {{ user.details.id }}</p>
+                    <p> {{ user }} </p>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+ 

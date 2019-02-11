@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>AngularJS - Tableless</title>
+        <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+        <script src="app.js"></script>
+    </head>
+    <body>
+        <div ng-app="myApp">
+            <div ng-controller="UserCtrl as $ctrl">
+                <h1>Exemplos filtro date</h1>
+                <h4 ng-non-bindable>{{Date.now() | date:'medium'}}</h4>
+                <p><span>{{$ctrl.Date.now() | date:'medium'}}</span></p>
+                <h4 ng-non-bindable>{{Date.now() | date:'yyyy-MM-dd HH:mm:ss Z'}}</h4>
+                <p><span>{{$ctrl.Date.now() | date:'yyyy-MM-dd HH:mm:ss Z'}}</span></p>
+                <h4 ng-non-bindable>{{'1492616467373' | date:'MM/dd/yyyy @ h:mma'}}</h4>
+                <p><span>{{'1492616467373' | date:'MM/dd/yyyy @ h:mma'}}</span></p>
+                <h4 ng-non-bindable>{{'1492616467373' | date:"MM/dd/yyyy 'at' h:mma"}}</h4>
+                <p><span>{{'1492616467373' | date:"MM/dd/yyyy 'at' h:mma"}}</span></p>
+            </div>
+        </div>
+    </body>
+</html>
+ 

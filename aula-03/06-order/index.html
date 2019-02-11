@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>AngularJS - Tableless</title>
+        <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+        <script src="app.js"></script>
+    </head>
+    <body>
+        <div ng-app="myApp">
+            <div ng-controller="UserCtrl as $ctrl">
+                <h3>Vetores originais</h3>
+                <p> {{ $ctrl.names }} </p>
+                <p> {{ $ctrl.nrs }} </p>
+                <table>
+                    <tr> <th>Name</th> <th>Phone</th> </tr>
+                    <tr ng-repeat="friendObj in $ctrl.friends | orderBy:'name'">
+                    <td>{{friendObj.name}}</td> <td>{{friendObj.phone}}</td>
+                    </tr>
+                    <caption>Objeto original</caption>
+                </table>
+                <hr>
+               <h3>Vetores ordenados</h3>
+               <p> {{ $ctrl.names | orderBy }} </p>
+               <p> {{ $ctrl.nrs | orderBy }} </p>
+               <table>
+                   <tr> <th>Name</th> <th>Phone</th> </tr>
+                   <tr ng-repeat="friendObj in $ctrl.friends | orderBy">
+                   <td>{{friendObj.name}}</td> <td>{{friendObj.phone}}</td>
+                   </tr>
+                   <caption>Objeto ordenado sem predicado</caption>
+               </table>
+               <table>
+                   <tr> <th>Name</th> <th>Phone</th> </tr>
+                   <tr ng-repeat="friendObj in $ctrl.friends | orderBy:'name'">
+                   <td>{{friendObj.name}}</td> <td>{{friendObj.phone}}</td>
+                   </tr>
+                   <caption>Objeto ordenado por name</caption>
+               </table>
+               <table>
+                   <tr> <th>Name</th> <th>Phone</th> </tr>
+                   <tr ng-repeat="friendObj in $ctrl.friends | orderBy:'phone'">
+                   <td>{{friendObj.name}}</td> <td>{{friendObj.phone}}</td>
+                   </tr>
+                   <caption>Objeto ordenado por phone</caption>
+               </table>
+               <hr style="clear: left">
+           </div>
+        </div>
+    </body>
+</html>
+ 
