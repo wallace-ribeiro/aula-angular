@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>AngularJS - Tableless</title>
+        <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+        <script src="app.js"></script>
+    </head>
+    <body>
+        <div ng-app="myApp">
+            <div ng-controller="UserCtrl">
+                <h3>Coisas</h3>
+                <div ng-repeat="coisa in coisas">
+                    <p> {{ coisa }} </p>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+ 
