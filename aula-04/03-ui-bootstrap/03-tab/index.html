@@ -1,0 +1,46 @@
+ 
+<html>
+    <head>
+        <title>AngularJS - Tableless</title>
+        <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-touch.min.js"></script>      
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-animate.min.js"></script>      
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="app.js"></script>
+    </head>
+    <body>
+        <div ng-app="myApp">
+            <div class="container" ng-controller="myController as $ctrl">
+                <h1 ng-bind="$ctrl.titulo"></h1>
+                <hr>
+                <uib-tabset active="active">
+                  <uib-tab index="0" heading="Static title">
+                    Imagem responsiva. Estique/encolha a tela para ver o que acontece.
+                    <img src="https://cdn-images-1.medium.com/max/800/1*SnS8of1VoD50Fap-7zM_Pw.jpeg" class="img-responsive" alt="Imagem responsiva">
+                  </uib-tab>
+                  <uib-tab index="$index + 1" ng-repeat="tab in $ctrl.tabs" heading="{{tab.title}}" disable="tab.disabled">
+                    {{tab.content}}
+                  </uib-tab>
+                  <uib-tab index="3" heading="Form Tab">
+                    <form name="nestedForm">
+                      <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" class="form-control" required ng-model="$ctrl.name"/>
+                      </div>
+                    </form>
+                  </uib-tab>
+                  <uib-tab index="4" select="$ctrl.alertMe()">
+                    <uib-tab-heading>
+                      <i class="glyphicon glyphicon-bell"></i> Alert!
+                    </uib-tab-heading>
+                    Podemos colocar HTML no cabeçalho da Tab e uma função de callback quando selecionado.
+                  </uib-tab>
+                </uib-tabset>
+              </div>
+        </div>
+
+
+        
+    </body>
+</html> 

@@ -1,0 +1,42 @@
+ 
+<html>
+    <head>
+        <title>AngularJS - Tableless</title>
+        <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-touch.min.js"></script>      
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-animate.min.js"></script>      
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        
+        <script src="app.js"></script>
+    </head>
+    <body>
+    <div ng-app="myApp">
+        <div class="container" ng-controller="myController as $ctrl">
+            <h1 ng-bind="$ctrl.titulo"></h1>
+            <p>Analise o comportamento de cada bloco.</p>
+               Tamanho do display:
+            <span class="visible-xs-inline">xs</span>
+            <span class="visible-sm-inline">sm</span>
+            <span class="visible-md-inline">md</span>  
+            <span class="visible-lg-inline">lg</span>
+            <hr />
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-8">.col-xs-12 .col-sm-6 .col-md-8</div>
+                <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
+                <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
+                <!-- Optional: clear the XS cols if their content doesn't match in height -->
+                <div class="clearfix visible-xs-block"></div>
+                <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
+            </div>
+         </div>
+
+
+     </div>
+        
+    </body>
+</html> 

@@ -1,0 +1,36 @@
+ 
+<html>
+    <head>
+        <title>AngularJS - Tableless</title>
+        <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-touch.min.js"></script>      
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-animate.min.js"></script>      
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        
+        <script src="app.js"></script>
+    </head>
+    <body>
+    <div ng-app="myApp">
+        <div class="container" ng-controller="myController as $ctrl">
+            <h1 ng-bind="$ctrl.titulo"></h1>
+            <hr />
+            <button ng-class="['btn', 'btn-' + $ctrl.alert.type]" 
+                 ng-click="$ctrl.showSnackAlert()"
+                 uib-tooltip="{{$ctrl.dicaBotao}}"
+                 tooltip-placement="right">
+                 Me clique!
+            </button>
+  
+           <!-- O alerta abaixo fica escondido até ser solicitado -->
+           <div class="snack-alert" 
+                  uib-alert 
+                  ng-class="$ctrl.snackAlertClass" > 
+               {{$ctrl.alert.msg}} 
+          </div>
+       </div>
+     </div>
+        
+    </body>
+</html> 
