@@ -1,0 +1,25 @@
+ 
+links para categorias: 
+GET http://104.248.235.252:3000/categorias/:id
+Exemplo: pegar a lista de categorias do usuário com o id 5:
+http://104.248.235.252:3000/categorias/5
+
+POST http://104.248.235.252:3000/categorias
+     Recebe como parametro um objeto: {id, categorias}
+     
+Exemplo para salvar categorias com o id 5: 
+$http.post('http://104.248.235.252:3000/categorias',{id: 5, categorias: ['Casa', 'Trabalho']})
+
+links para tarefas: 
+GET http://104.248.235.252:3000/tarefas/:id
+Exemplo: pegar a lista de tarefas do usuário com o id 5:
+http://104.248.235.252:3000/tarefas/5
+
+POST http://104.248.235.252:3000/tarefas
+     Recebe como parametro um objeto: {id, tarefas}
+     
+Exemplo para salvar tarefas com o id 5: 
+$http.post('http://104.248.235.252:3000/tarefas',{id: 5, tarefas: [
+{ nome: 'Lavar as roupas', categoria: 'Casa', feito: false },
+{ nome: 'Consertar a porta', categoria: 'Casa', feito: false },
+{ nome: 'Terminar o relatório', categoria: 'Trabalho', feito: false }]})
