@@ -1,9 +1,14 @@
 (function() {
 
   angular.module('myApp')
-  .controller('LoginController', ['$scope', 'LoginService', function($scope, LoginService) {
+  .controller('LoginController', ['$scope', '$state', 'LoginService', function($scope, $state, LoginService) {
     $scope.logar = () => {
-      LoginService.login($scope.login, $scope.senha);
+      LoginService.login($scope.login, $scope.senha).then((result) => {
+        if(result) {
+	  $state.go('home');
+	  return;
+	}
+      });
     };
   }]);
 })();
