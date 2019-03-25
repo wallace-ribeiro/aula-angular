@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>Noticias</title>
+        <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+        <script src="https://unpkg.com/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
+        <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular-resource.js"></script>
+        
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-touch.min.js"></script>      
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-animate.min.js"></script>      
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+       
+        <script src="app/app.js"></script>
+        <script src="app/components/login/loginService.js"></script>
+        <script src="app/components/login/loginController.js"></script>
+        <script src="app/components/noticias/noticiasService.js"></script>
+        <script src="app/components/noticias/noticiasController.js"></script>
+    </head>
+    <body>
+        <div class="container" ng-app="myApp">
+            <uib-tabset active="active">
+                <uib-tab index="0" ui-sref ="home" heading="Notícias">
+                </uib-tab>
+                <uib-tab index="1" ui-sref ="login" heading="Login">
+           </uib-tabset>
+            
+           <ui-view></ui-view>
+        </div>
+    </body>
+</html>
+ 
+ 
