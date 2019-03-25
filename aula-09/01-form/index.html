@@ -1,0 +1,24 @@
+ 
+<html>
+    <head>
+        <title>AngularJS - Tableless</title>
+        <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+        <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular-messages.js"></script>
+        
+              
+        <script src="app.js"></script>
+    </head>
+    <body ng-app="myApp">
+      <div ng-controller="myController as $ctrl">
+        <form name="$ctrl.form1">
+          <label for="minlength">Tamanho mínimo da palavra: </label>
+          <input type="number" name="input0" ng-model="$ctrl.minlength" id="minlength" required/>
+          <br>
+          <ng-messages for="$ctrl.form1.input0.$error">
+            <ng-message when="number">Isso não é número. Digite o número 6.</ng-message>
+            <ng-message when="required">Esse campo é obrigatório, experimente digitar +</ng-message>
+          </ng-messages>
+        </form>
+      </div>
+    </body>
+</html>
