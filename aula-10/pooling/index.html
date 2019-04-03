@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>Chat</title>
+        <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+        <script src="app.js"></script>
+    </head>
+    <body>
+        <div ng-app="ChatApp">
+           <div ng-controller="ChatController">
+              <h3>Chat</h3>
+              <div>Nome:</div>
+              <input ng-model="name">
+              <h2>Mensagens</h2>
+              <div ng-repeat="msg in getMsgs() track by $index">
+                    <p>{{msg.mensagem.name}}: {{ msg.mensagem.msg }} </p>
+              </div>
+              <input ng-model="msg">
+              <button ng-click="emitMsg()">Send</button>
+            </div>
+        </div>
+        
+    </body>
+</html>
