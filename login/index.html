@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>Login</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+        <script src="app.js"></script>
+    </head>
+    <body>
+        <div ng-app="myApp">
+            <div ng-controller="MyController as $ctrl">
+                <h3>Login</h3>
+                
+                <div><label>Login:</label><input type="text" ng-model="$ctrl.username"></div>
+                <div><label>Senha:</label><input type="password" ng-model="$ctrl.senha"></div>
+                <div><button ng-click="$ctrl.login()">Logar</button></div>
+            </div>
+        </div>
+    </body>
+</html>
+ 
+ 
