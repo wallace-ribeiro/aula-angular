@@ -1,0 +1,21 @@
+<div ng-controller="MyController as $ctrl">
+   
+        <hr/>
+        <hr/>
+        <div>Noticias</div>
+        <div ng-repeat="noticia in $ctrl.noticias">
+            <div><label>Titulo:</label>{{noticia.titulo}}</div>
+            <div><label>Mensagem:</label>{{noticia.mensagem}}</div>
+            <div><label>Imagem:</label>{{noticia.imagem}}</div>
+            <div><label>Autor:</label>{{noticia.autor}}</div>
+            <div><label>Data:</label>{{noticia.data}}</div>
+            <button ng-click="$ctrl.editar(noticia.id)">Editar</button>
+            <hr/>
+        </div>
+        <hr/>
+        <hr/>
+        <div>Nova Noticia</div>
+        <manipular-noticia on-change="$ctrl.novaNoticia(event)" nome-btn="$ctrl.nomeBtn"/>
+</div>
+ 
+ 
