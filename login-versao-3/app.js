@@ -30,6 +30,13 @@
     this.getNoticias = () => {
       return Resource.query().$promise
     };
+
+    this.getNoticiaById = (id) => {
+      return Resource.query().$promise.then((noticias)=> {
+         return noticias.find((noticia) => noticia.id == id);
+      })
+    };
+
     this.criarNoticia = (noticia) => {
       let newNoticia = new Resource()
       newNoticia.titulo = noticia.titulo
@@ -50,12 +57,17 @@
   .controller('EditController', ['NoticiasService', '$state','$stateParams', function(NoticiasService, $state, $stateParams) {
    
      console.log('$stateParams: ',$stateParams.id)
-     this.id = $stateParams.id;
-     this.salvarNoticia = (noticia) => (event) => {
-      noticia.titulo = event.titulo;
-      noticia.mensagem = event.mensagem;
-      noticia.imagem = event.imagem;
-      NoticiasService.atualizarNoticia(noticia);
+     NoticiasService.getNoticiaById($stateParams.id).then((noticia) => {
+      console.log('Noticia: ',noticia);
+      this.noticia = noticia || null;
+     })
+     this.nomeBotao = "Salvar";
+     this.salvarNoticia = (event) => {
+      this.noticia.titulo = event.titulo;
+      this.noticia.mensagem = event.mensagem;
+      this.noticia.imagem = event.imagem;
+      NoticiasService.atualizarNoticia(this.noticia);
+      $state.go("home");
      }
    }])
   .controller('MyController', ['LoginService','NoticiasService', '$state', function(LoginService, NoticiasService, $state) {
