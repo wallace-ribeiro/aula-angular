@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app works!';
+
+  receiverTitulo = (tituloNovo) => {
+    console.log('Foi emitido o evento e chegou no pai >>>> ', tituloNovo);
+    this.title = tituloNovo.title;
+  }
 }
