@@ -1,0 +1,14 @@
+<h1>
+  {{title}}
+</h1>
+<div><p>Operador 1: <input type="text" [(ngModel)]="operator1"/></p>
+	<p>Operador 2: <input type="text" [(ngModel)]="operator2"/></p>
+	<p>Ultima soma: {{ultimaSoma}}</p>
+	<p>Ultima subtracao: {{ultimaSubtracao}}</p>
+	<p>Ultima multiplicacao: {{ultimaMultiplicacao}}</p>
+	<p>Ultima divisao: {{ultimaDivisao}}</p>
+</div>
+<soma (notifyParent)="onChange($event)" operator1={{operator1}} operator2={{operator2}}></soma>
+<subtracao (notifyParent)="onChange($event)" operator1={{operator1}} operator2={{operator2}}></subtracao>
+<multiplicacao (notifyParent)="onChange($event)" operator1={{operator1}} operator2={{operator2}}></multiplicacao>
+<divisao (notifyParent)="onChange($event)" dividendo={{operator1}} divisor={{operator2}}></divisao>
