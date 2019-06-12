@@ -18,7 +18,11 @@ export class AppComponent {
   
 
   onChange = (event) => {
-      console.log('coisasService: ',this.coisasService.getCoisas())
+      this.coisasService.getCoisas().subscribe(
+          data => console.log('data: ',data),
+          error => alert(error),
+          () => console.log("acesso a webapi get ok...")
+       );
       if(event.fonte == `soma`) {
           this.ultimaSoma = event.resultado
       } else if(event.fonte == `subtracao`) {
