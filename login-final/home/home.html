@@ -1,0 +1,29 @@
+<div ng-controller="HomeController as $ctrl">
+   
+        <h3>Login</h3>
+                
+        <div><label>Login:</label><input type="text" ng-model="$ctrl.username"></div>
+        <div><label>Senha:</label><input type="password" ng-model="$ctrl.senha"></div>
+        <div><button ng-click="$ctrl.login()">Logar</button></div>
+        <hr/>
+        <hr/>
+        <hr/>
+        <hr/>
+        <div>Noticias</div>
+        <div ng-repeat="noticia in $ctrl.noticias">
+            <div><label>Titulo:</label>{{noticia.titulo}}</div>
+            <div><label>Mensagem:</label>{{noticia.mensagem}}</div>
+            <div><label>Imagem:</label>{{noticia.imagem}}</div>
+            <div><label>Autor:</label>{{noticia.autor}}</div>
+            <div><label>Data:</label>{{noticia.data}}</div>
+            <button ng-click="$ctrl.editar(noticia.id)">Editar</button>
+            <button ng-click="$ctrl.deletar(noticia)">Deletar</button>
+            <hr/>
+        </div>
+        <hr/>
+        <hr/>
+        <div>Nova Noticia</div>
+        <noticia on-change="$ctrl.novaNoticia(event)" nome-btn="$ctrl.nomeBtn"/>
+</div>
+ 
+ 
